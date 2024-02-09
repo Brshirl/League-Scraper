@@ -33,7 +33,7 @@ for champion_box in champion_boxes:
     champion_info = champion_box.find('div', {'class': 'info'}).text.strip()
     champion_kda = champion_box.find('div', {'class': 'kda'}).text.strip()
     champion_play = champion_box.find('div', {'class': 'played'}).text.strip()
-    print(f"Champion Info: {champion_info}, KDA: {champion_kda}, Play Rate: {champion_play}")
+    print(f"Champion Info: {champion_info}, KDA Average: {champion_kda}, Play Rate: {champion_play}")
 print(slash+'\n')
 #
 print('Seven day Ranked Stats')
@@ -67,6 +67,7 @@ plt.figure(figsize=(8, 8))
 plt.pie(stats_df['Win Rate'], labels=stats_df['Champion'], autopct='%1.1f%%', startangle=140)
 plt.title('Seven day Ranked Win Rates')
 plt.show()
+
 
 plt.figure(figsize=(10, 6))
 plt.scatter(stats_df['Champion'], stats_df['Win Rate'], color='blue')
